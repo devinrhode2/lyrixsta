@@ -14,6 +14,9 @@ module.exports = function(environment) {
     },
 
     APP: {
+      sourcemaps: {
+        enabled: true
+      }
       // Here you can pass flags/options to your application instance
       // when it is created
     }
