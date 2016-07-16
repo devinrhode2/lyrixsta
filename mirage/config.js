@@ -1,4 +1,9 @@
 export default function() {
+this.get('/instruments');
+this.get('/instruments/:id');
+this.post('/instruments');
+this.del('/instruments/:id');
+this.patch('/instruments/:id');
 
   // These comments are here to help you get started. Feel free to delete them.
 

@@ -1,0 +1,48 @@
+<h1>Instruments list</h1>
+
+<p>
+  {{link-to "New Instrument" "instruments.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Folder
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |instrument|}}
+        <tr>
+          <td>
+            {{instrument.name}}
+          </td>
+          <td>
+            {{instrument.folder}}
+          </td>
+          <td>
+            {{link-to "Edit" "instruments.edit" instrument}}
+          </td>
+          <td>
+            {{link-to "Show" "instruments.show" instrument}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" instrument}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Instruments found
+  </p>
+{{/if}}
