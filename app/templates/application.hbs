@@ -1,3 +1,34 @@
-<h2 id="title">Welcome to Ember</h2>
+<style>
+{{#with style_vars}}
+  html {
+    width: 100%;
+  }
+  body {
+    width: 100%;
+    margin: 0;
+    --app-main-trim: #{{app-main-trim}};
+    --app-nav-height: {{app-nav-height}}px;
+  }
+  app-nav {
+    height: var(--app-nav-height);
+    background-color: var(--app-main-trim);
 
-{{outlet}}
+    display: block;
+    width: 100%;
+    color: {{inverse-color app-main-trim}};
+    border: 1px dotted black;
+  }
+  app-nav .nav-item {
+    display: inline; 
+  }
+{{/with}}
+</style>
+<app-nav>
+  <span class="nav-item" title="lyric-remixer" style="text-align: left;">Lyrixtsa</span>
+  <span class="nav-item" style="text-align: center;">hide</span>
+  <span class="nav-item" style="align: left-align;">Get In</span>
+</app-nav>
+
+<div style="margin:0% 1% 220px 1%;">{{!220px is my approximation for a short thumb}}
+  {{outlet}}
+</div>
