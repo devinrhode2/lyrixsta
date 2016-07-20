@@ -6,5 +6,5 @@ import appTheme from './appTheme'; //would eventually be application/theme.hbss 
 //themable at every level, app, engine, 
 
 export default Ember.Controller.extend({
-    style_vars: appTheme
+    ...appTheme
 });
